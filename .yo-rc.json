@@ -1,0 +1,9 @@
+{
+  "generator-angular-flow": {
+    "publicDir": "public",
+    "srcDir": "src",
+    "distDir": "dist",
+    "configModule": "app",
+    "defaultModule": "app"
+  }
+}

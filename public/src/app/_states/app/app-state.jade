@@ -1,0 +1,16 @@
+.container-fluid.app-state.full-width
+	.row
+		.col-sm-12 
+			h3.text-center {{appCtrl.city.description}}
+		.col-sm-12 
+			h4.text-center {{appCtrl.city.condition.text}}
+		.col-sm-12 
+			h1.text-center {{appCtrl.city.condition.temp}} ºF
+	.row
+		.col-sm-12
+			table.full-width
+				tr(ng-repeat="day in appCtrl.city.forecast")
+					td {{day.day}}
+					td {{day.text}}
+					td {{day.low}}
+					td {{day.high}}
