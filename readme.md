@@ -38,3 +38,4 @@ Simple weather app that uses yahoo weather api
 * This simple version only allows a location at a time
 * Code names are not allways consistent, cities actually can be any location
 * Search of city names needs improvement on the query format, sometimes does not return any value
+* Previous search requests should be checked and resolved before creating new ones
