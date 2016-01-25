@@ -35,3 +35,6 @@ Simple weather app that uses yahoo weather api
 * Very little functionality is implemented, the focus was on application structure
 * Does not have end to end tests
 * The system does not have persistency, all values are in memmory
+* This simple version only allows a location at a time
+* Code names are not allways consistent, cities actually can be any location
+* Search of city names needs improvement on the query format, sometimes does not return any value
