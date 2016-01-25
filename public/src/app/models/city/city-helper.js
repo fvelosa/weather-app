@@ -2,6 +2,9 @@
 
 module.exports = transformResponse
 
+/** 
+ * Transforms the response form the yahoo server into a simpler object 
+ */
 function transformResponse(res) {
 	var weather = {}
 	

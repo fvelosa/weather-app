@@ -20,11 +20,11 @@ describe('Test the city Factory', function () {
 			$rootScope = $injector.get('$rootScope')
 		})
 
-		city = cityFactory('london')
+		city = cityFactory(144)
 	})
 
 	it('should be empty to start with', function () {
-		expect(city.name).toBe('london');
+		expect(city.woeid).toBe(144);
 	});
 
 	it('should call apiSrv with the right string on fetch', function () {
@@ -35,7 +35,7 @@ describe('Test the city Factory', function () {
 		city.$fetch()
 
 		expect(apiSrv.get.calls.allArgs()[0][0]).toBe(config.yahooPath);
-		expect(apiSrv.get.calls.allArgs()[0][1].q).toBe('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="london")');
+		expect(apiSrv.get.calls.allArgs()[0][1].q).toBe('select * from weather.forecast where woeid="144"');
 	});
 
 	it('when $resolve should call apiSrv if not in memory', function () {
@@ -46,10 +46,10 @@ describe('Test the city Factory', function () {
 		city.$resolve()
 
 		expect(apiSrv.get.calls.allArgs()[0][0]).toBe(config.yahooPath);
-		expect(apiSrv.get.calls.allArgs()[0][1].q).toBe('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="london")');
+		expect(apiSrv.get.calls.allArgs()[0][1].q).toBe('select * from weather.forecast where woeid="144"');
 
 		// Adds query attribute to check it won't test again
-		city.query = {}
+		city.description = 'test'
 
 		city.$resolve()
 

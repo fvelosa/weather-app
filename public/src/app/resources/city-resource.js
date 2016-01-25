@@ -9,7 +9,7 @@ require('../models/city/city')
 angular.module('app')
     .factory('cityResource', function (cityFactory) {
 
-        var city = cityFactory('london')
+        var city = cityFactory()
 
-        return city;
-    });
+        return city
+    })

@@ -11,6 +11,7 @@ function systemConfig() {
 		yahooUrl: 'https://query.yahooapis.com',
 		yahooPath: '/v1/public/yql',
 		// _lodash style template for query
-		yahooQueryTemplate: 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="<%= city %>")'
-	};
+		yahooCityTemplate: 'select * from weather.forecast where woeid="<%= woeid %>"',
+		yahooPlacesTemplate: 'select woeid, country, placeTypeName, name from geo.places where text="<%= city %>"'
+	}
 }

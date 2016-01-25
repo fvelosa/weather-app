@@ -1,0 +1,16 @@
+.row
+	.col-sm-12 
+		h3.text-center {{city.description}}
+	.col-sm-12 
+		h4.text-center {{city.condition.text}}
+	.col-sm-12 
+		h1.text-center {{city.condition.temp}} ºF
+.row
+	.col-sm-12
+		table.table.full-width.table-bordered
+			tbody
+				tr(ng-repeat="day in city.forecast")
+					td {{day.day}}
+					td {{day.text}}
+					td {{day.low}}
+					td {{day.high}}

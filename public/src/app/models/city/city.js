@@ -14,17 +14,18 @@ angular.module('app')
 function cityFactory($q, apiSrv, config) {
 
 	/* Definition of city object */
-	function City(name) {
-		this.name = name
+	function City(woeid) {
+		this.woeid = woeid || 44418 // London woeid
 	}
 
-	// Uses similiar api syntax has restmod but it is not needed for smal project
-
+	// Uses similiar api syntax has restmod
+	
 	// Only loads data from server if not in cache
 	City.prototype.$resolve = function () {
 		var self = this
 
-		if (this.query) {
+		// Check if has content
+		if (self.description) {
 			return $q.when(self)
 		} else {
 			return this.$fetch().then(function () {
@@ -38,8 +39,8 @@ function cityFactory($q, apiSrv, config) {
 		var self = this
 		
 		// Creates the query using template
-		var query = _.template(config.yahooQueryTemplate)({
-			city: this.name
+		var query = _.template(config.yahooCityTemplate)({
+			woeid: this.woeid
 		})
 
 		var req = apiSrv.get(config.yahooPath, {
@@ -52,7 +53,7 @@ function cityFactory($q, apiSrv, config) {
 		return req
 	}
 
-	return function (name) {
-		return new City(name)
+	return function (woeid) {
+		return new City(woeid)
 	}
 }

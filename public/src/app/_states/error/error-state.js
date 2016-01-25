@@ -8,7 +8,6 @@ angular.module('app')
     .config(function ($stateProvider) {
         $stateProvider.state('error', {
             url: '/error-404',
-            parent: 'app',
             controller: 'ErrorStateController',
             template: require('./error-state.html')
         });
