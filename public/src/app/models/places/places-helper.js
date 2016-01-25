@@ -8,9 +8,9 @@ module.exports = transformResponse
 function transformResponse(res) {
 	var result
 
-	if (res.query.results) {
+	if (res.query.results && res.query.results.place) {
 		// When search returns only one location the place is an object, not an array
-		if (!_.isArray(res.query.results.place)) {
+		if (res.query.results.place && !_.isArray(res.query.results.place)) {
 			// Creates array with a single object
 			res.results.place = [res.query.results.place]
 		}

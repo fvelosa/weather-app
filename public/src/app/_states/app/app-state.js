@@ -23,7 +23,7 @@ function configApp($stateProvider) {
 	});
 	
 	$stateProvider.state('app-no-woeid', {
-		url: '/weather',
+		url: '/',
 		views: {
 			'': {
 				template: require('./app-state.jade'),

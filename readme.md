@@ -15,7 +15,7 @@ Simple weather app that uses yahoo weather api
 
 ## Using the app
 
-`npm run start`: start the webpack server
+`npm run start`: start the webpack server, app is running in port 8080
 
 `npm run build`: builds the app
 
@@ -29,6 +29,7 @@ Simple weather app that uses yahoo weather api
 * Tests are superficial and a production application would need much more edge scenarios that could never crash de app
 * Needs improvement in design, the focus was on application structure
 * Needs proper error handling
+* Needs improvement in respinsive pagination
 
 ## Bugs and limitations
 
