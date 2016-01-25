@@ -7,6 +7,8 @@ Simple weather app that uses yahoo weather api
 - Uses angular, webpack, ui-router, bootstrap, jade
 - Does not uses gulp, all commands in npm
 - Has simple unit-tests
+- Deep linking
+- Search for places
 
 ## Installing the app
 
